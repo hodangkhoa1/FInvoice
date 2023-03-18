@@ -1,0 +1,181 @@
+﻿/******************* FONT TEXT *******************/
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+/******************* END FONT TEXT *******************/
+
+
+/******************* RESET CSS *******************/
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 24px;
+    background-color: #F8F8F8;
+}
+
+a {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+li {
+    list-style: none;
+    font-size: 24px;
+}
+
+p {
+    padding: 0;
+    font-size: 24px;
+    margin-bottom: unset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: unset;
+}
+
+button {
+    background: transparent;
+    font-size: 24px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+ul {
+    padding-left: unset;
+    margin-bottom: unset;
+}
+
+/******************* END RESET CSS *******************/
+
+
+/******************* SCROLL BAR *******************/
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-image: linear-gradient(#242993 20%, #BF7926 80%);
+    box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, 0.5);
+}
+
+/******************* END SCROLL BAR *******************/
+
+
+/******************* THUỘC TÍNH DÙNG CHUNG *******************/
+.flexBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 70px;
+    color: #242993;
+    padding: 20px 0 20px 0;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 50px;
+    color: #242993;
+    padding: 20px 0 20px 0;
+}
+
+.text__bold {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1500px) {
+}
+
+@media screen and (max-width: 1100px) {
+    .home__preauto {
+        margin-top: unset !important;
+    }
+
+    .home__navbar .logo {
+        width: 80px;
+    }
+
+    .home__header__page {
+        background-size: contain !important;
+    }
+
+    footer {
+        background-color: rgba(0, 4, 78, 0.8);
+        padding-top: 20px;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1, .dynamic-text span {
+        font-size: 35px !important;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p,
+    li,
+    .name-desc, a {
+        font-size: 15px;
+    }
+
+    .home__header .home__contain {
+        flex-direction: column;
+    }
+
+    .login__btn .header__action-login .btn-login-link {
+        width: 80px !important;
+        height: 40px !important;
+    }
+
+        .login__btn .header__action-login .btn-login-link .name-desc,
+        .login__btn .header__action-login .btn-login-link .btn-icon i {
+            font-size: 12px !important;
+        }
+
+        .login__btn .header__action-login .btn-login-link .login {
+            height: 40px !important;
+            width: 80px !important;
+        }
+
+    .home__navbar .menu ul {
+        gap: 10px !important;
+    }
+
+    .home__navbar .logo {
+        width: 80px !important;
+    }
+}
+
+/******************* END THUỘC TÍNH DÙNG CHUNG *******************/

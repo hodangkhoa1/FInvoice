@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+@model FinvoiceWeb.Models.ConfirmOTP
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pin Code - Finvoice</title>
+    <!-- TẠO ICON TRÊN THANH WEB -->
+    <link rel="icon" href="~/images/LogoFinvoice.png" type="image/png" sizes="200x200" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="~/css/Shared/Loader.css" />
+    <link rel="stylesheet" href="~/css/Shared/PinCode.css" />
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loader">
+            <div class="upper ball"></div>
+            <div class="right ball"></div>
+            <div class="lower ball"></div>
+            <div class="left ball"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <i class="bx bxs-check-shield"></i>
+        </header>
+        <h4>Enter OTP Code</h4>
+        @using (Html.BeginForm("Index", "PinCode", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="input-field">
+                <input type="text" id="otp-code-1" />
+                <input type="text" id="otp-code-2" disabled />
+                <input type="text" id="otp-code-3" disabled />
+                <input type="text" id="otp-code-4" disabled />
+                <input type="text" id="otp-code-5" disabled />
+                <input type="text" id="otp-code-6" disabled />
+                @Html.TextBoxFor(model => model.OtpCode, new { @type = "hidden", @id = "total-otp-code", @value = ""})
+            </div>
+            <div class="message">
+                <span class="error_message">@Html.ValidationMessageFor(model => model.OtpCode)</span>
+            </div>
+            <button type="submit">Verify OTP</button>
+        }
+    </div>
+
+    <script src="~/js/Shared/Loader.js"></script>
+    <script src="~/js/Shared/PinCode.js"></script>
+</body>
+</html>

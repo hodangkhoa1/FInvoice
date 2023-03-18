@@ -1,0 +1,85 @@
+﻿@using FinvoiceWeb.Models;
+@using FinvoiceWeb.Utils;
+@{
+    UserInfo userInfo = SessionHelper.GetObjectFromJson<UserInfo>(Context.Session, "LOGIN_USER");
+}
+
+<header class="header-top">
+    <div class="home__navbar flexBox">
+        <div class="logo">
+            <img src="~/images/LogoFinvoice.png" alt="">
+        </div>
+
+        <div class="menu">
+            <ul class="flexBox">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Index">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/exportexcel">Export Excel</a>
+                </li>
+
+                <li class="nav-item dropdown" id="demo1">
+                    <a class="nav-link" href="">History</a>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-content__item">
+                            <a class="nameHistory" href="">Result Excels</a>
+                        </li>
+                        <li class="dropdown-content__item">
+                            <a class="nameHistory" href="">Invoices</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        @if (userInfo == null)
+        {
+            <div class="login__btn flexBox">
+                <div class="header__action-login">
+                    <a href="/login" class="btn-login-link">
+                        <span class="name-desc">Login</span>
+                        <div class="btn-icon login">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="header__action-user">
+                @if (@userInfo.Avatar != null)
+                {
+                    <div onclick="menuToggle()" class="user-avatar">
+                        <img src="data:image/png;base64,@userInfo.Avatar" />
+                    </div>
+                }
+                else
+                {
+                    <div onclick="menuToggle()" class="user-avatar" style="background: @userInfo.ColorAvatar">
+                        <p>@userInfo.DefaultAvatar.ToString().ToUpper()</p>
+                    </div>
+                }
+
+                <div class="user-menu">
+                    <ul>
+                        <li>
+                            <i class="uil uil-user-circle"></i>
+                            <a href="/profile">Profile</a>
+                        </li>
+                        <li>
+                            <i class="uil uil-padlock"></i>
+                            <a href="/change-password">Change Password</a>
+                        </li>
+                        <li>
+                            <i class="uil uil-signout"></i>
+                            <a href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</header>

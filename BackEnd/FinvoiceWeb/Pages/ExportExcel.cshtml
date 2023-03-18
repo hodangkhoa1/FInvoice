@@ -1,0 +1,49 @@
+﻿@page "/exportexcel"
+@using FinvoiceWeb.Models;
+@using FinvoiceWeb.Utils;
+@model FinvoiceWeb.Pages.ExportExcelModel
+@{
+    ViewBag.Title = "Export Excel";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    UserInfo userInfo = SessionHelper.GetObjectFromJson<UserInfo>(HttpContext.Session, "LOGIN_USER");
+    string currentUrl = HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.PathBase;
+}
+
+@section Style
+{
+    <link rel="stylesheet" href="~/css/User/ExportExcel.css" />
+}
+
+@section Script
+{
+    <script src="~/js/User/ExportExcel.js"></script>
+    <script>
+        window.onload = CheckValueUser('@(userInfo == null ? "" : userInfo.IdAccount)', '@currentUrl/login', '@currentUrl/Index');
+    </script>
+}
+
+<section class="exportExcel">
+    <div class="container">
+        <div class="exportExcel__rectangle flexBox">
+
+            <div class="exportExcel__icon flexBox">
+                <i class="fa-solid fa-upload"></i>
+            </div>
+
+            <div class="exportExcel__content flexBox">
+                <p>Choose the file to be imported</p>
+                <p>[only file XML formats are supported]</p>
+                <p>Maximum upload file size is 8 MB.</p>
+            </div>
+
+            <div class="exportExcel__btnImport flexBox">
+                <button onclick="location.href = '';">Import file</button>
+            </div>
+
+            <div class="exportExcel__note flexBox">
+                <p>Dowload sample template for Import.</p>
+            </div>
+
+        </div>
+    </div>
+</section>

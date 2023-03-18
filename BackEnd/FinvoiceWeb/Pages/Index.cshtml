@@ -1,0 +1,402 @@
+﻿@page
+@model FinvoiceWeb.Pages.IndexModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@section Style
+    {
+    <link rel="stylesheet" href="~/css/User/Home.css" />
+}
+
+@section Script
+    {
+    <script src="~/js/User/Home.js"></script>
+}
+
+<!-- HEADER ------>
+<div class="home__header container-fluid flexBox">
+    <div class="home__contain flexBox">
+        <div class="header__content ms-3">
+            <h2>Increased Efficiency</h2>
+            <div class="header__content-wrapper">
+                <h1>Through</h1>
+                <ul class="dynamic-text">
+                    <li>
+                        <span>Automation</span>
+                    </li>
+                    <li>
+                        <span>Automation</span>
+                    </li>
+                    <li>
+                        <span>Automation</span>
+                    </li>
+                    <li>
+                        <span>Automation</span>
+                    </li>
+                </ul>
+            </div>
+            <p>
+                We have <span class="text__bold">automated invoice distribution</span> from as our automation
+                initiatives.
+            </p>
+        </div>
+
+        <div class="header__img">
+            <img src="~/images/invoice.png" alt="">
+        </div>
+    </div>
+</div>
+<!-- END HEADER -->
+<!-- PREAUTO -->
+<div class="home__preauto">
+    <div class="title text-center">
+        <h2>Pre-Automation </h2>
+        <p>
+            <span class="text__bold">Manually creating</span> and <span class="text__bold">
+                distributing
+                invoices
+            </span> - labor - intensive and prone to errors.
+        </p>
+    </div>
+
+    <div class="preauto__body my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="preauto__cover flexBox mb-3">
+                        <div class="preauto__retangle card py-3">
+                            <div class="preauto__contain flexBox">
+                                <div class="circle flexBox">
+                                    <div class="preauto__retangle--img">
+                                        <img src="~/images/cloud.png" class="card-img-top">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body flexBox">
+                                <p class="card-text text-center">Download invoices manually</p>
+                            </div>
+
+                            <div class="preauto__icon icon--top d-none d-md-block">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="preauto__cover flexBox mb-3">
+                        <div class="preauto__retangle card py-3">
+                            <div class="preauto__contain flexBox">
+                                <div class="circle flexBox">
+                                    <div class="preauto__retangle--img">
+                                        <img src="~/images/email.png" class="card-img-top">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body flexBox">
+                                <p class="card-text text-center">Create an email for the tenant contact</p>
+                            </div>
+
+                            <div class="preauto__icon icon--bottom d-none d-md-block">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="preauto__cover flexBox mb-3">
+                        <div class="preauto__retangle card py-3">
+                            <div class="preauto__contain flexBox">
+                                <div class="circle flexBox">
+                                    <div class="preauto__retangle--img">
+                                        <img src="~/images/emailVideo.png" class="card-img-top">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body flexBox">
+                                <p class="card-text text-center">Send the e-mailmanually</p>
+                            </div>
+
+                            <div class="preauto__icon icon--top d-none d-md-block">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="preauto__cover flexBox mb-3">
+                        <div class="preauto__retangle card py-3">
+                            <div class="preauto__contain flexBox">
+                                <div class="circle flexBox">
+                                    <div class="preauto__retangle--img">
+                                        <img src="~/images/messe.png" class="card-img-top">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body flexBox">
+                                <p class="card-text text-center">Maintain communication records manually</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="background__bottom d-none d-sm-block"></div>
+</div>
+<!-- END PREAUTO -->
+<!-- PROSTAUTO -->
+<div class="home__prostauto my-5 my-md-0">
+    <div class="title text-center">
+        <h2>Post-Automation</h2>
+        <p><span class="text__bold">End-to-end automation </span>on the Yardi platform</p>
+    </div>
+
+    <div class="prostauto__body my-5">
+        <div class="container">
+            <div class="row flexBox">
+
+                <div class="col-12 col-sm-6 col-lg-4 flexBox">
+                    <div class="prostauto__item flexBox">
+                        <div class="prostauto__cover">
+                            <div class="prostauto__img">
+                                <img src="~/images/sys.png" alt="">
+                            </div>
+
+                            <div class="prostauto__content">
+                                <p>System picks up invoices <span class="text-yellow">automatically</span></p>
+                            </div>
+                        </div>
+
+                        <div class="prostauto__item--layout">
+                            <div class="layout--top"></div>
+                            <div class="layout--bottom"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 flexBox">
+                    <div class="prostauto__item flexBox">
+                        <div class="prostauto__cover">
+
+                            <div class="prostauto__img">
+                                <img src="~/images/code.png" alt="">
+                            </div>
+
+                            <div class="prostauto__content">
+                                <p>
+                                    Validating businessrules,
+                                    <span class="text-yellow">coding</span>, and <span class="text-yellow">handling exceptions</span>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="prostauto__item--layout">
+                            <div class="layout--top color1"></div>
+                            <div class="layout--bottom"></div>
+                            <div class="prostauto__item--arrow">
+                                <img src="~/images/arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 flexBox">
+                    <div class="prostauto__item flexBox">
+                        <div class="prostauto__cover">
+
+                            <div class="prostauto__img">
+                                <img src="~/images/file.png" alt="">
+                            </div>
+
+                            <div class="prostauto__content">
+                                <p>
+                                    <span class="text-yellow">Invoice distribution</span> by gathering contact
+                                    details
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="prostauto__item--layout">
+                            <div class="layout--top color2"></div>
+                            <div class="layout--bottom"></div>
+                            <div class="prostauto__item--arrow">
+                                <img src="~/images/arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 flexBox">
+                    <div class="prostauto__item flexBox">
+                        <div class="prostauto__cover">
+                            <div class="prostauto__img">
+                                <img src="~/images/sys.png" alt="">
+                            </div>
+                            <div class="prostauto__content">
+                                <p>System picks up invoices <span class="text-yellow">automatically</span></p>
+                            </div>
+                        </div>
+
+                        <div class="prostauto__item--layout">
+                            <div class="layout--top color3"></div>
+                            <div class="layout--bottom"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 flexBox">
+                    <div class="prostauto__item flexBox">
+                        <div class="prostauto__cover">
+                            <div class="prostauto__img">
+                                <img src="~/images/code.png" alt="">
+                            </div>
+                            <div class="prostauto__content">
+                                <p>
+                                    Validating businessrules,
+                                    <span class="text-yellow">coding</span>, and <span class="text-yellow">handling exceptions</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="prostauto__item--layout">
+                            <div class="layout--top color4"></div>
+                            <div class="layout--bottom"></div>
+                            <div class="prostauto__item--arrow">
+                                <img src="~/images/arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PROSTAUTO -->
+<!-- NUMBER -->
+<div class="home__number py-4">
+    <div class="container">
+        <div class="title text-center">
+            <h2>Some interesting number about FInvoice</h2>
+        </div>
+
+        <div class="number__body my-5">
+            <div class="row">
+
+                <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                    <div class="number__body--cover flexBox">
+                        <div class="number__body--top">
+                            <p class="number--yellow">10</p>
+                        </div>
+                        <div class="number__body--content">
+                            <p>Support reading xml templates from popular vendors today</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                    <div class="number__body--cover flexBox">
+                        <div class="number__body--top">
+                            <p class="number--yellow">5</p>
+                        </div>
+                        <div class="number__body--content">
+                            <p>Help users convert to Excel files with templates of accounting software</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                    <div class="number__body--cover flexBox">
+                        <div class="number__body--top">
+                            <p class="number--yellow">24/7</p>
+                        </div>
+                        <div class="number__body--content">
+                            <p>Always support users to use the software with dedication and professionalism</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END NUMBER -->
+
+<!-- SUPPORTED -->
+<div class="home__supported my-5">
+    <div class="container">
+        <div class="supported__retangle--center flexBox">
+            <div class="supported__retangle supported--top"></div>
+        </div>
+
+        <div class="supported__body my-5">
+            <div class="title text-center">
+                <h2>Supported vendors</h2>
+            </div>
+
+            <div class="supported__carousel my-5">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="logo__supported">
+                                <img src="~/images/fpt.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo__supported">
+                                <img src="~/images/E-InvoiceNet.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo__supported">
+                                <img src="~/images/EasyInvoice.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo__supported">
+                                <img src="~/images/Meinvoice.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo__supported">
+                                <img src="~/images/Minvoice.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo__supported">
+                                <img src="~/images/the-gioi-di-dong-logo.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="supported__retangle--center flexBox">
+            <div class="supported__retangle supported--bottom"></div>
+        </div>
+    </div>
+</div>
+<!-- END SUPPORTED -->

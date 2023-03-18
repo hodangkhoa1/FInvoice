@@ -1,0 +1,197 @@
+﻿@{
+    Layout = null;
+}
+@model FinvoiceWeb.Models.Account
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Finvoice</title>
+    <!-- TẠO ICON TRÊN THANH WEB -->
+    <link rel="icon" href="~/images/LogoFinvoice.png" type="image/png" sizes="200x200" />
+    <!-- Link FontAwsome V6-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" />
+    <!-- Box Icons -->
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' />
+    <!-- Link Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="~/css/Shared/Loader.css" />
+    <link rel="stylesheet" href="~/css/Shared/Login.css" />
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader">
+            <div class="upper ball"></div>
+            <div class="right ball"></div>
+            <div class="lower ball"></div>
+            <div class="left ball"></div>
+        </div>
+    </div>
+
+    <div class="page-container" id="page-container">
+
+        <!-- FORM SECTION -->
+        <div class="container-row">
+
+            <!-- SIGN UP -->
+            <div class="container-col align-items-center flex-col sign-up">
+                <div class="form-wrapper align-items-center">
+                    @using (Html.BeginForm("Register", "Register", FormMethod.Post, new { @class = "sign-up" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            @Html.TextBoxFor(model => model.FullName, new { @id = "fullname", @placeholder = "Full Name", @oninput = "CheckSignUpFullname()", @onblur = "CheckSignUpFullname()"})
+                            <i class='bx bx-check-circle signup_fullname_icon_check' id="signup_fullname_icon_check"></i>
+                            <i class='bx bx-error-circle signup_fullname_icon_error' id="signup_fullname_icon_error"></i>
+                        </div>
+                        <div class="message">
+                            <span class="error_message" id="fullname_error_signup">@Html.ValidationMessageFor(model => model.FullName)</span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            @Html.TextBoxFor(model => model.Email, new { @id = "email", @type = "email", @placeholder = "Email", @oninput = "CheckSignUpEmail()", @onblur = "CheckSignUpEmail()"})
+                            <i class='bx bx-check-circle signup_email_icon_check' id="signup_email_icon_check"></i>
+                            <i class='bx bx-error-circle signup_email_icon_error' id="signup_email_icon_error"></i>
+                        </div>
+                        <div class="message">
+                            <span class="error_message" id="email_error_signup">@Html.ValidationMessageFor(model => model.Email)</span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            @Html.TextBoxFor(model => model.Password, new { @type = "password", @id = "password", @placeholder = "Password", @oninput = "CheckSignUpPassword()", @onblur = "CheckSignUpPassword()", @onkeyup = "PasswordSignUpKeyUp()"})
+                            <i class="fa-solid fa-eye-slash" id="show-signup-password-icon"></i>
+                            <i class='bx bx-check-circle signup_password_icon_check' id="signup_password_icon_check"></i>
+                            <i class='bx bx-error-circle signup_password_icon_error' id="signup_password_icon_error"></i>
+                        </div>
+                        <div class="message">
+                            <span class="error_message" id="password_error_signup">@Html.ValidationMessageFor(model => model.Password)</span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            @Html.TextBoxFor(model => model.ConfirmPassword, new { @type = "password", @id = "confirmpassword", @placeholder = "Confirm password", @oninput = "CheckSignUpConfirmPassword()", @onblur = "CheckSignUpConfirmPassword()", @onkeyup = "ConfirmPasswordSignUpKeyUp()"})
+                            <i class="fa-solid fa-eye-slash" id="show-signup-confirm-password-icon"></i>
+                            <i class='bx bx-check-circle signup_confirmpassword_icon_check' id="signup_confirmpassword_icon_check"></i>
+                            <i class='bx bx-error-circle signup_confirmpassword_icon_error' id="signup_confirmpassword_icon_error"></i>
+                        </div>
+                        <div class="message">
+                            <span class="error_message" id="confirmpassword_error_signup">@Html.ValidationMessageFor(model => model.ConfirmPassword)</span>
+                        </div>
+                        <button type="submit" class="form-button">Sign up</button>
+                        <p class="social_text">Or Sign up with social platforms</p>
+                        <div class="social_media sign-up">
+                            <a href="#" class="social_icon">
+                                <i class='bx bxl-google'></i>
+                            </a>
+                            <a href="#" class="social_icon">
+                                <i class='bx bxl-facebook'></i>
+                            </a>
+                            <a href="#" class="social_icon">
+                                <i class='bx bxl-microsoft'></i>
+                            </a>
+                        </div>
+                        <p class="Login_dontHaveAcc">
+                            Already have an account ? <button type="button" onclick="toggle()" class="sign_up_btn">Sign in</button>
+                        </p>
+                    }
+                </div>
+            </div>
+            <!-- END SIGN UP -->
+            <!-- SIGN IN -->
+            <div class="container-col align-items-center flex-col sign-in">
+                <div class="form-wrapper align-items-center">
+                    @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "sign-in" }))
+                    {
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            @Html.TextBoxFor(model => model.Email, new { @type = "email", @id = "signin_email", @placeholder = "Email", @oninput = "CheckSignInEmail()", @onblur = "CheckSignInEmail()"})
+                            <i class='bx bx-check-circle signin_email_icon_check' id="signin_email_icon_check"></i>
+                            <i class='bx bx-error-circle signin_email_icon_error' id="signin_email_icon_error"></i>
+                        </div>
+                        <div class="message">
+                            <span class="error_message" id="email_error_signin">@Html.ValidationMessageFor(model => model.Email)</span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            @Html.TextBoxFor(model => model.Password, new { @type = "password", @id = "signin_password", @placeholder = "Password", @oninput = "CheckSignInPassword()", @onblur = "CheckSignInPassword()", @onkeyup = "PasswordSignInKeyUp()"})
+                            <i class="fa-solid fa-eye-slash" id="show-signin-password-icon"></i>
+                            <i class='bx bx-check-circle signin_password_icon_check' id="signin_password_icon_check"></i>
+                            <i class='bx bx-error-circle signin_password_icon_error' id="signin_password_icon_error"></i>
+                        </div>
+                        <div class="message">
+                            <span class="error_message" id="password_error_signin">@Html.ValidationMessageFor(model => model.Password)</span>
+                        </div>
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="rememberMe" name="rememberMe" value="Y">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="forgot_link">
+                                <a href="">Forgot password</a>
+                            </div>
+                        </div>
+                        <button type="submit" class="form-button">Sign in</button>
+                        <p class="social_text">Or Sign in with social platforms</p>
+                        <div class="social_media sign-in">
+                            <a href="#" class="social_icon">
+                                <i class='bx bxl-google'></i>
+                            </a>
+                            <a href="#" class="social_icon">
+                                <i class='bx bxl-facebook'></i>
+                            </a>
+                            <a href="#" class="social_icon">
+                                <i class='bx bxl-microsoft'></i>
+                            </a>
+                        </div>
+                        <p class="Login_dontHaveAcc">
+                            Do not have an account ? <button type="button" onclick="toggle()" class="sign_up_btn">Sign up</button>
+                        </p>
+                    }
+                </div>
+            </div>
+            <!-- END SIGN IN -->
+        </div>
+        <!-- END FORM SECTION -->
+        <!-- CONTENT SECTION -->
+        <div class="container-row content-row">
+            <!-- SIGN IN CONTENT -->
+            <div class="container-col align-items-center flex-col">
+                <div class="content-text sign-in">
+                    <h2>Join with us ?</h2>
+                    <p>
+                        Create an account to explore more about FInvoice!
+                    </p>
+                </div>
+                <div class="content-image sign-in">
+                    <img src="~/images/undraw_different_love_a3rg.svg" alt="welcome">
+                </div>
+            </div>
+            <!-- END SIGN IN CONTENT -->
+            <!-- SIGN UP CONTENT -->
+            <div class="container-col align-items-center flex-col">
+                <div class="content-image sign-up">
+                    <img src="~/images/undraw_creative_team_r90h.svg" alt="welcome">
+                </div>
+                <div class="content-text sign-up">
+                    <h2>Join with us ?</h2>
+                    <p>
+                        Sign in and visit FInvoice Website! Let's Go!
+                    </p>
+                </div>
+            </div>
+            <!-- END SIGN UP CONTENT -->
+        </div>
+        <!-- END CONTENT SECTION -->
+    </div>
+
+    <!-- Script  -->
+    <script src="~/js/Shared/Loader.js"></script>
+    <script src="~/js/Shared/Login.js"></script>
+    <script>
+        CheckURL('@ViewData["VALUE_LOGIN"]');
+    </script>
+</body>
+</html>

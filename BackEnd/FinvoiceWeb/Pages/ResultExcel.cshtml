@@ -1,0 +1,10 @@
+﻿@page "/resultexcel"
+@using FinvoiceWeb.Models;
+@using FinvoiceWeb.Utils;
+@model FinvoiceWeb.Pages.ResultExcelModel
+@{
+    ViewBag.Title = "Result Excel";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    UserInfo userInfo = SessionHelper.GetObjectFromJson<UserInfo>(HttpContext.Session, "LOGIN_USER");
+    string currentUrl = HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.PathBase;
+}

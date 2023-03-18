@@ -1,0 +1,274 @@
+﻿/******************* HEADER *******************/
+.home__header {
+    height: 85vh;
+}
+
+    .home__header .home__contain {
+        justify-content: space-evenly;
+        gap: 20px;
+        color: #242993;
+    }
+
+        .home__header .home__contain h2 {
+            font-weight: 100;
+        }
+
+        .home__header .home__contain p {
+            color: black;
+            font-weight: 200;
+        }
+
+    .home__header .header__content-wrapper {
+        display: inline-flex;
+    }
+
+        .home__header .header__content-wrapper .dynamic-text {
+            margin-left: 15px;
+            height: 90px;
+            line-height: 90px;
+            overflow: hidden;
+            margin-top: 18px;
+        }
+
+            .home__header .header__content-wrapper .dynamic-text li {
+                position: relative;
+                font-size: 70px;
+                font-weight: 500;
+                top: 0;
+                color: #BF7926;
+                animation: slide 3s steps(4) infinite;
+            }
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.home__header .header__content-wrapper .dynamic-text li span {
+    position: relative;
+}
+
+    .home__header .header__content-wrapper .dynamic-text li span::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgb(248, 248, 248);
+        border-left: 2px solid #BF7926;
+        animation: typing 3s steps(10) infinite;
+    }
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+/******************* END HEADER *******************/
+
+/******************* PREAUTO *******************/
+.home__preauto {
+    position: relative;
+    margin-top: 10rem;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #E8E9FF;
+    border: 5px solid #C5C8FF;
+}
+
+.preauto__retangle {
+    position: relative;
+    -webkit-box-shadow: 4px 5px 6px 0px rgba(197, 200, 255, 1);
+    -moz-box-shadow: 4px 5px 6px 0px rgba(197, 200, 255, 1);
+    box-shadow: 4px 5px 6px 0px rgba(197, 200, 255, 1);
+    border: none;
+    width: 15rem;
+    height: 18rem;
+}
+
+.preauto__retangle--img {
+    width: 90px;
+}
+
+.preauto__contain {
+    width: 100%;
+}
+
+.preauto__icon {
+    position: absolute;
+    right: -22px;
+}
+
+    .preauto__icon.icon--top {
+        top: 0;
+    }
+
+    .preauto__icon.icon--bottom {
+        bottom: 0;
+    }
+
+    .preauto__icon i {
+        color: #F49E39;
+        font-size: 35px;
+    }
+
+.home__preauto .card-body p {
+    font-size: 18px;
+}
+
+.home__preauto .background__bottom {
+    position: absolute;
+    bottom: 0;
+    background-color: #EEEEFF;
+    width: 100%;
+    height: 10rem;
+    z-index: -1;
+}
+
+/******************* END PREAUTO *******************/
+
+/******************* PROSTAUTO *******************/
+.prostauto__item {
+    position: relative;
+    height: 24rem;
+    align-items: start;
+    flex-direction: column;
+}
+
+.prostauto__cover {
+    margin-left: 20%;
+}
+
+.prostauto__img {
+    width: 6rem;
+}
+
+.prostauto__content {
+    padding-left: 10px;
+    font-size: 18px !important;
+}
+
+    .prostauto__content .text-yellow {
+        color: #F49E39;
+    }
+
+.prostauto__item--layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9rem;
+    height: 20rem;
+    transform: skew(-15deg);
+    z-index: -1;
+    -webkit-box-shadow: -6px 6px 6px 0px rgb(197 200 255);
+    -moz-box-shadow: -6px 6px 6px 0px rgb(197 200 255);
+    box-shadow: -6px 6px 6px 0px rgb(197 200 255);
+}
+
+    .prostauto__item--layout .layout--top {
+        background-color: #242993;
+        height: 5rem;
+    }
+
+    .prostauto__item--layout .layout--bottom {
+        background: radial-gradient(93.28% 110.33% at 50.42% 38.66%, rgba(113, 116, 185, 0.2) 0%, rgba(255, 255, 255, 0) 62.07%);
+        height: 15rem;
+    }
+
+    .prostauto__item--layout .color1 {
+        background-color: #7275B9;
+    }
+
+    .prostauto__item--layout .color2 {
+        background-color: #A3A4D1;
+    }
+
+    .prostauto__item--layout .color3 {
+        background-color: #C7C8E6;
+    }
+
+    .prostauto__item--layout .color4 {
+        background-color: #DBDBEE;
+    }
+
+.prostauto__item--arrow {
+    position: absolute;
+    bottom: 6px;
+    left: -44px;
+    width: 4rem;
+}
+
+/******************* END PROSTAUTO *******************/
+
+/******************* NUMBER *******************/
+.home__number {
+    background-color: #E2E3F1;
+}
+
+.number__body--cover {
+    flex-direction: column;
+}
+
+    .number__body--cover p {
+        text-align: center;
+    }
+
+.number--yellow {
+    color: #F49E39;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/******************* END NUMBER *******************/
+
+/******************* SUPPORTED *******************/
+.supported__retangle {
+    width: 35rem;
+    height: 5px;
+    background-color: #F49E39;
+    border-radius: 4px;
+}
+
+.supported__carousel .swiper {
+    width: 100%;
+    height: 270px;
+}
+
+.supported__carousel .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.supported__carousel .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 0;
+}
+
+.supported__carousel .logo__supported {
+    width: 300px;
+    height: 250px;
+    background-color: #ffff;
+}
+
+.supported__carousel .swiper-slide .logo__supported img {
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/******************* END SUPPORTED *******************/
