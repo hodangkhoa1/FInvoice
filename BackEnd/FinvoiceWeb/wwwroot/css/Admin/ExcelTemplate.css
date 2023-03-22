@@ -1,0 +1,453 @@
+﻿/* Main Body */
+.body-main {
+    position: absolute;
+    width: calc(100% - 235px);
+    left: 235px;
+    min-height: 100vh;
+    background: #fff;
+    transition: 0.5s;
+}
+
+    .body-main.active {
+        width: calc(100% - 55px);
+        left: 55px;
+    }
+
+.main-topbar {
+    position: fixed;
+    width: 5%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px 0 10px;
+    z-index: 1;
+}
+
+    .main-topbar .menu-button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+
+        .main-topbar .menu-button .menu-button__burger {
+            position: absolute;
+            left: -50px;
+            width: 35px;
+            height: 4px;
+            border-radius: 5px;
+            background: transparent;
+            box-shadow: none;
+            transition: all .5s ease-in-out;
+        }
+
+            .main-topbar .menu-button .menu-button__burger::before,
+            .main-topbar .menu-button .menu-button__burger::after {
+                content: '';
+                position: absolute;
+                width: 35px;
+                height: 4px;
+                background: #BF7926;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+                transition: all .5s ease-in-out;
+            }
+
+            .main-topbar .menu-button .menu-button__burger::before {
+                transform: rotate(45deg) translate(35px, -35px);
+            }
+
+            .main-topbar .menu-button .menu-button__burger::after {
+                transform: rotate(-45deg) translate(35px, 35px);
+            }
+
+        .main-topbar .menu-button.open .menu-button__burger {
+            transform: translateX(50px);
+            background: #BF7926;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        }
+
+            .main-topbar .menu-button.open .menu-button__burger::before {
+                transform: translateY(-10px);
+            }
+
+            .main-topbar .menu-button.open .menu-button__burger::after {
+                transform: translateY(10px);
+            }
+
+
+
+
+/******************* SEARCH *******************/
+.topbar-search {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+    .topbar-search #searchBox {
+        border-radius: 55px;
+        padding: 0 12px;
+        height: 50px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        -webkit-box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+        -moz-box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+        box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+    }
+
+        .topbar-search #searchBox .button-search {
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0 10px 0 2px;
+        }
+
+        .topbar-search #searchBox input {
+            font-size: 20px;
+            width: 260px;
+            border: 0;
+            background: transparent;
+            outline: none;
+            color: #242993;
+        }
+
+    .topbar-search .search-place::placeholder {
+        /* chạy tốt trên Chrome, Firefox, Opera, Safari 10.1+ */
+        color: orange;
+        opacity: 1;
+        /* Firefox */
+    }
+
+    .topbar-search .search-place:-ms-input-placeholder {
+        /* chạy trên Internet Explorer 10-11 */
+        color: orange;
+    }
+
+    .topbar-search .search-place::-ms-input-placeholder {
+        /* chạy trên Microsoft Edge */
+        color: orange;
+    }
+
+    .topbar-search .button-search i {
+        color: #242993;
+        transition: all .5s;
+    }
+
+    .topbar-search .button-search:hover i {
+        color: #BF7926;
+    }
+
+
+/******************* END SEARCH *******************/
+
+
+
+/******************* BUTTON TEMPLATE *******************/
+.template__button {
+    justify-content: space-between;
+}
+
+    .template__button .template__button--status {
+        height: 40px;
+        width: 100px;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #fff;
+        transition: all .5s;
+    }
+
+        .template__button .template__button--status i {
+            font-size: 24px;
+            transition: all .5s;
+        }
+
+        .template__button .template__button--status .btn__status, .template__button .template__button--status p {
+            gap: 10px;
+            font-size: 20px;
+            transition: all .5s;
+        }
+
+        .template__button .template__button--status:hover.btn--delete {
+            transform: scale(1.1);
+        }
+
+        /* button edit */
+        .template__button .template__button--status.btn--import {
+            border: 1px solid #3B8F39;
+            width: 250px;
+            height: 55px;
+        }
+
+            .template__button .template__button--status.btn--import .btn__status {
+                color: #3B8F39;
+                transition: all .5s;
+            }
+
+        .template__button .template__button--status:hover.btn--import .btn__status p,
+        .template__button .template__button--status:hover.btn--import .btn__status i {
+            color: #fff;
+        }
+
+        .template__button .template__button--status:hover.btn--import {
+            background-color: #3B8F39;
+        }
+        /* End button edit */
+
+
+        /* button delete */
+        .template__button .template__button--status.btn--delete {
+            border: 1px solid red;
+            background-color: red;
+        }
+
+            .template__button .template__button--status.btn--delete .btn__status {
+                color: red;
+                transition: all .5s;
+                color: #fff;
+            }
+/* End button delete */
+
+/******************* END BUTTON TEMPLATE *******************/
+
+
+
+
+/******************* TABLE LIST USER *******************/
+.table__listExcelTemplate {
+    overflow-x: auto;
+}
+
+.overal__status {
+    height: 35px;
+    width: 100px;
+    border-radius: 25px;
+    color: #fff;
+}
+
+    .overal__status.status--draft {
+        background-color: #8F8A92;
+    }
+
+    .overal__status.status--active {
+        background-color: #5CB95A;
+    }
+
+    .overal__status.status--disable {
+        background-color: red;
+    }
+
+.action__cotain {
+    gap: 10px;
+}
+
+.action__btn--status {
+    height: 35px;
+    width: 90px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #fff;
+    transition: all .5s;
+}
+
+    .action__btn--status i {
+        font-size: 24px;
+    }
+
+    .action__btn--status:hover {
+        transform: scale(1.1);
+    }
+
+    /* button edit */
+    .action__btn--status.btn--edit {
+        border: 1px solid #242993;
+    }
+
+        .action__btn--status.btn--edit .btn__status {
+            color: #242993;
+            transition: all .5s;
+        }
+
+    .action__btn--status:hover.btn--edit {
+        background-color: #242993;
+    }
+    /* End button edit */
+
+
+    /* button active */
+    .action__btn--status.btn--active {
+        border: 1px solid #5CB95A;
+    }
+
+        .action__btn--status.btn--active .btn__status {
+            color: #5CB95A;
+            transition: all .5s;
+        }
+
+    .action__btn--status:hover.btn--active {
+        background-color: #5CB95A;
+    }
+    /* End button active */
+
+
+    /* button delete */
+    .action__btn--status.btn--delete {
+        border: 1px solid red;
+        background-color: red;
+    }
+
+        .action__btn--status.btn--delete .btn__status {
+            color: red;
+            transition: all .5s;
+            color: #fff;
+        }
+    /* End button delete */
+
+
+    /* button disable */
+    .action__btn--status.btn--disable {
+        border: 1px solid red;
+    }
+
+        .action__btn--status.btn--disable .btn__status {
+            color: red;
+            transition: all .5s;
+        }
+
+    .action__btn--status:hover.btn--disable {
+        background-color: red;
+    }
+    /* End button disable */
+
+
+    /* button Enable */
+    .action__btn--status.btn--enable {
+        border: 1px solid #3696CC;
+    }
+
+        .action__btn--status.btn--enable .btn__status {
+            color: #3696CC;
+            transition: all .5s;
+        }
+
+    .action__btn--status:hover.btn--enable {
+        background-color: #3696CC;
+    }
+    /* End button Enable */
+
+    .action__btn--status:hover .btn__status {
+        color: #fff;
+    }
+
+.form-check input {
+    border: 3px solid #000;
+    width: 35px;
+    height: 35px;
+}
+
+.form-check-input {
+    margin-top: unset;
+}
+
+.form-check label, .Excel__title {
+    font-size: 24px;
+}
+
+.form-check-input:checked {
+    background-color: #3B8F39;
+    border: 3px solid #3B8F39 !important;
+}
+
+.form-check-input:focus {
+    border-color: #7275b9;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.table__allCheck .form-check label {
+    color: #fff;
+}
+
+.row__check {
+    justify-content: space-between;
+}
+
+/******************* END TABLE LIST USER *******************/
+
+
+
+/******************* User Management Pagination *******************/
+.table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+    .table-pagination ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+        .table-pagination ul li {
+            line-height: 45px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            color: #242993;
+            transition: all 0.3s ease;
+        }
+
+            .table-pagination .pagination-number .pagination-link,
+            .table-pagination ul li a {
+                color: #242993;
+                text-decoration: none;
+            }
+
+            .table-pagination ul li.pagination-number {
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                margin: 0 3px;
+            }
+
+            .table-pagination ul li.pagination-dots {
+                font-size: 22px;
+                cursor: default;
+                margin: 0 10px;
+            }
+
+            .table-pagination ul li.pagination-button {
+                padding: 0 20px;
+            }
+
+            .table-pagination ul li.button-prev {
+                border-radius: 25px 5px 5px 25px;
+            }
+
+            .table-pagination ul li.button-next {
+                border-radius: 5px 25px 25px 5px;
+            }
+
+            .table-pagination ul li.active,
+            .table-pagination .pagination-number:hover,
+            .table-pagination ul li.pagination-button:hover {
+                background: #242993;
+            }
+
+                .table-pagination ul li.active .pagination-link,
+                .table-pagination .pagination-number:hover .pagination-link,
+                .table-pagination ul li.pagination-button a:hover {
+                    color: #fff;
+                }
+/******************* END User Management Pagination *******************/

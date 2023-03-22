@@ -1,0 +1,259 @@
+﻿@page
+@model FinvoiceWeb.Areas.Admin.Pages.SuppliersModel
+@{
+    ViewBag.Title = "Suppliers";
+    Layout = "~/Admin/Pages/Shared/_Layout.cshtml";
+}
+
+@section Style
+    {
+    <link rel="stylesheet" href="~/css/Admin/Suppliers.css" />
+}
+
+<div class="body-main">
+
+            <!-- Top Bar -->
+            <div class="main-topbar">
+                <div class="menu-button">
+                    <div class="menu-button__burger"></div>
+                </div>
+            </div>
+
+            <!-- Search Box -->
+            <div class="topbar-search flexBox my-3">
+                <div id="searchBox">
+                    <input class="search-place" type="text" placeholder="Search service">
+                    <button class="button-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <div class="title ms-3">
+                <h3>Suppliers Management</h3>
+            </div>
+
+            <!-- Button Template -->
+            <div class="template__button mx-3 mb-3 flexBox">
+                <div class="import--button">
+                    <div class="template__button--status flexBox btn--import">
+                        <button class="btn__status flexBox">
+                            <i class="fa-solid fa-people-carry-box"></i>
+                            <p>Add Supplier</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="delete--button">
+                    <div class="template__button--status flexBox btn--delete" onclick="ConfirmDeleted('Supplier')">
+                        <button class="btn__status flexBox">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Table List User -->
+            <div class="table__listExcelTemplate mx-3">
+                <table>
+                    <tr>
+                        <th>
+                            <div class="table__allCheck flexBox">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="allCheck" onclick="checkAll(this, 'idSupplierTable')" />
+                                </div>
+                            </div>
+                        </th>
+
+                        <th>
+                            <p>No</p>
+                        </th>
+
+                        <th>
+                            <div class="th__cover flexBox">
+                                <p>Name Suppliers</p>
+                                <button style="color: #fff;">
+                                    <i class="fa-solid fa-sort"></i>
+                                </button>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="th__cover flexBox">
+                                <p>Date Created</p>
+                                <button style="color: #fff;">
+                                    <i class="fa-solid fa-sort"></i>
+                                </button>
+                            </div>
+                        </th>
+
+                        <th>
+                            <p>Status</p>
+                        </th>
+
+                        <th>
+                            <p>Action</p>
+                        </th>
+                    </tr>
+
+                    <tr onclick="window.location = '#'">
+                        <td>
+                            <div class="table__allCheck flexBox">
+                                <div class="form-check">
+                                    <input type="checkbox" name="idSupplierTable" class="form-check-input" id="allCheck" />
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="No">
+                                1
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="name__suppliers">
+                                abc
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="dateCreate__suppliers">
+                                17/03/2023
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status__XMLTemplate flexBox">
+                                <div class="overal__status flexBox status--draft">
+                                    <p class="status">Draft</p>
+                                </div>
+
+                                <!-- <div class="overal__status flexBox status--active">
+                                    <p class="status">Active</p>
+                                </div> -->
+
+                                <!-- <div class="overal__status flexBox status--disable">
+                                    <p class="status">Disable</p>
+                                </div> -->
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="action__admin">
+                                <div class="action__cotain flexBox">
+                                    <div class="action__btn--status flexBox btn--edit">
+                                        <button class="btn__status flexBox">Edit</button>
+                                    </div>
+
+                                    <div class="action__btn--status flexBox btn--active">
+                                        <button class="btn__status" onclick="ConfirmActive('Supplier')">Active</button>
+                                    </div>
+
+                                    <!-- <div class="action__btn--status flexBox btn--disable">
+                                        <button class="btn__status" onclick="ConfirmDisable('Supplier')">Disable</button>
+                                    </div> -->
+
+                                    <!-- <div class="action__btn--status flexBox btn--enable">
+                                        <button class="btn__status" onclick="ConfirmEnable('Supplier')">Enable</button>
+                                    </div> -->
+
+                                    <div class="action__btn--status flexBox btn--delete" onclick="ConfirmDeleted('Supplier')">
+                                        <button class="btn__status flexBox">Delete</button>
+                                    </div>
+                                </div>
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr onclick="window.location = '#'">
+                        <td>
+                            <div class="table__allCheck flexBox">
+                                <div class="form-check">
+                                    <input type="checkbox" name="idSupplierTable" class="form-check-input" id="allCheck" />
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="No">
+                                1
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="name__suppliers">
+                                abc
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="dateCreate__suppliers">
+                                17/03/2023
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status__suppliers flexBox">
+                                <!-- <div class="overal__status flexBox status--draft">
+                                    <p class="status">Draft</p>
+                                </div> -->
+
+                                <div class="overal__status flexBox status--active">
+                                    <p class="status">Active</p>
+                                </div>
+
+                                <!-- <div class="overal__status flexBox status--disable">
+                                    <p class="status">Disable</p>
+                                </div> -->
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="action__admin">
+                                <div class="action__cotain flexBox">
+                                    <div class="action__btn--status flexBox btn--edit">
+                                        <button class="btn__status flexBox">Edit</button>
+                                    </div>
+
+                                    <!-- <div class="action__btn--status flexBox btn--active">
+                                        <button class="btn__status" onclick="ConfirmDisable('Supplier')">Active</button>
+                                    </div> -->
+
+                                    <div class="action__btn--status flexBox btn--disable">
+                                        <button class="btn__status" onclick="ConfirmDisable('Supplier')">Disable</button>
+                                    </div>
+
+                                    <!-- <div class="action__btn--status flexBox btn--enable">
+                                        <button class="btn__status" onclick="ConfirmEnable('Supplier')">Enable</button>
+                                    </div> -->
+
+                                    <div class="action__btn--status flexBox btn--delete" onclick="ConfirmDeleted('Supplier')">
+                                        <button class="btn__status flexBox">Delete</button>
+                                    </div>
+                                </div>
+                            </span>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!-- User Management Pagination -->
+            <div class="table-pagination">
+                <ul>
+                    <li class="pagination-button button-prev">
+                        <a href="#">
+                            <i class="fas fa-angle-left"></i> Prev
+                        </a>
+                    </li>
+                    <li class="pagination-number active">
+                        <a href="#" class="pagination-link">1</a>
+                    </li>
+                    <li class="pagination-button button-next">
+                        <a href="#">
+                            Next <i class="fas fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
