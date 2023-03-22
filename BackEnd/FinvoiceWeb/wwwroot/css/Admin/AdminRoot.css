@@ -81,3 +81,101 @@ ul {
 }
 
 /******************* END SCROLL BAR *******************/
+
+
+/******************* THUỘC TÍNH DÙNG CHUNG *******************/
+.flexBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 70px;
+    color: #242993;
+    padding: 20px 0 20px 0;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 50px;
+    color: #242993;
+    padding: 20px 0 20px 0;
+}
+
+.text__bold {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1500px) {
+}
+
+@media screen and (max-width: 1100px) {
+    .home__preauto {
+        margin-top: unset !important;
+    }
+
+    .home__navbar .logo {
+        width: 80px;
+    }
+
+    .home__header__page {
+        background-size: contain !important;
+    }
+
+    footer {
+        background-color: rgba(0, 4, 78, 0.8);
+        padding-top: 20px;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1, .dynamic-text span {
+        font-size: 35px !important;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p,
+    li,
+    .name-desc, a {
+        font-size: 15px;
+    }
+
+    .home__header .home__contain {
+        flex-direction: column;
+    }
+
+    .login__btn .header__action-login .btn-login-link {
+        width: 80px !important;
+        height: 40px !important;
+    }
+
+        .login__btn .header__action-login .btn-login-link .name-desc,
+        .login__btn .header__action-login .btn-login-link .btn-icon i {
+            font-size: 12px !important;
+        }
+
+        .login__btn .header__action-login .btn-login-link .login {
+            height: 40px !important;
+            width: 80px !important;
+        }
+
+    .home__navbar .menu ul {
+        gap: 10px !important;
+    }
+
+    .home__navbar .logo {
+        width: 80px !important;
+    }
+}
+
+/******************* END THUỘC TÍNH DÙNG CHUNG *******************/

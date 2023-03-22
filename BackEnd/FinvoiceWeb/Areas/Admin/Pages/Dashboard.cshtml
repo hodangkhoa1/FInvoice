@@ -1,0 +1,68 @@
+﻿@page "/dashboard"
+@model FinvoiceWeb.Areas.Admin.Pages.DashboardModel
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Admin/Pages/Shared/_Layout.cshtml";
+}
+
+@section Style
+{
+    <link rel="stylesheet" href="~/css/Admin/Dashboard.css" />
+}
+
+<div class="body-main">
+
+    <!-- Top Bar -->
+    <div class="main-topbar">
+        <div class="menu-button">
+            <div class="menu-button__burger"></div>
+        </div>
+    </div>
+
+    <!-- Card Main -->
+    <div class="card-main">
+        <div class="card-box">
+            <div class="card-box__content flexBox">
+                <div class="content-numbers counter">1,504</div>
+                <div class="content-name">Users</div>
+            </div>
+            <div class="card-box__icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+        </div>
+        <div class="card-box">
+            <div class="card-box__content flexBox">
+                <div class="content-numbers counter">1,504</div>
+                <div class="content-name">Excel Templates</div>
+            </div>
+            <div class="card-box__icon">
+                <i class="fa-solid fa-file-excel"></i>
+            </div>
+        </div>
+        <div class="card-box">
+            <div class="card-box__content flexBox">
+                <div class="content-numbers counter">10</div>
+                <div class="content-name">Suppliers</div>
+            </div>
+            <div class="card-box__icon">
+                <i class="fa-solid fa-people-carry-box"></i>
+            </div>
+        </div>
+        <div class="card-box">
+            <div class="card-box__content flexBox">
+                <div class="content-numbers counter">500</div>
+                <div class="content-name">Accounting Software</div>
+            </div>
+            <div class="card-box__icon">
+                <i class="fa-solid fa-users-gear"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Charts -->
+    <div class="graph-chart mb-3">
+        <div class="chart-box">
+            <canvas id="ChartCustomer"></canvas>
+        </div>
+    </div>
+</div>

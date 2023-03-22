@@ -1,0 +1,327 @@
+﻿.body-main {
+    position: absolute;
+    width: calc(100% - 235px);
+    left: 235px;
+    min-height: 100vh;
+    background: #fff;
+    transition: 0.5s;
+}
+
+    .body-main.active {
+        width: calc(100% - 55px);
+        left: 55px;
+    }
+
+.main-topbar {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px 0 10px;
+    z-index: 1;
+}
+
+    .main-topbar .menu-button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+
+        .main-topbar .menu-button .menu-button__burger {
+            position: absolute;
+            left: -50px;
+            width: 35px;
+            height: 4px;
+            border-radius: 5px;
+            background: transparent;
+            box-shadow: none;
+            transition: all .5s ease-in-out;
+        }
+
+            .main-topbar .menu-button .menu-button__burger::before,
+            .main-topbar .menu-button .menu-button__burger::after {
+                content: '';
+                position: absolute;
+                width: 35px;
+                height: 4px;
+                background: #BF7926;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+                transition: all .5s ease-in-out;
+            }
+
+            .main-topbar .menu-button .menu-button__burger::before {
+                transform: rotate(45deg) translate(35px, -35px);
+            }
+
+            .main-topbar .menu-button .menu-button__burger::after {
+                transform: rotate(-45deg) translate(35px, 35px);
+            }
+
+        .main-topbar .menu-button.open .menu-button__burger {
+            transform: translateX(50px);
+            background: #BF7926;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        }
+
+            .main-topbar .menu-button.open .menu-button__burger::before {
+                transform: translateY(-10px);
+            }
+
+            .main-topbar .menu-button.open .menu-button__burger::after {
+                transform: translateY(10px);
+            }
+
+/******************* Card Main *******************/
+.card-main {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 5%;
+}
+
+    .card-main .card-box {
+        position: relative;
+        background: #fff;
+        border-radius: 20px;
+        padding: 10%;
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-shadow: 4px 4px 10px -1px rgb(118 183 243);
+        -moz-box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+        box-shadow: 4px 4px 10px -1px rgb(118 183 243);
+        color: #242993;
+    }
+
+.card-box__content {
+    flex-direction: column;
+    align-items: start;
+}
+
+.card-main .card-box .content-numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 45px;
+    color: var(--blue);
+}
+
+.card-main .card-box .content-name {
+    color: var(--black2);
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.card-main .card-box .card-box__icon {
+    font-size: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.card-main .card-box:nth-child(2) .content-numbers,
+.card-main .card-box:nth-child(2) .content-name,
+.card-main .card-box:nth-child(2) .card-box__icon {
+    color: #30B134;
+}
+
+.card-main .card-box:nth-child(3) .content-numbers,
+.card-main .card-box:nth-child(3) .content-name,
+.card-main .card-box:nth-child(3) .card-box__icon {
+    color: #d0368a;
+}
+
+.card-main .card-box:nth-child(4) .content-numbers,
+.card-main .card-box:nth-child(4) .content-name,
+.card-main .card-box:nth-child(4) .card-box__icon {
+    color: #586DDE;
+}
+
+.card-main .card-box:hover:first-child {
+    background: linear-gradient(135deg, #7275B9, #242993);
+}
+
+.card-main .card-box:hover:nth-child(2) {
+    background: linear-gradient(135deg, #30B134, #80BB03);
+}
+
+.card-main .card-box:hover:nth-child(3) {
+    background: linear-gradient(to right, #d0368a 20%, #586DDE 80%);
+}
+
+.card-main .card-box:hover:nth-child(4) {
+    background: linear-gradient(to right, #0dcaf0 20%, #586DDE 80%);
+}
+
+.card-main .card-box:hover .content-numbers,
+.card-main .card-box:hover .content-name,
+.card-main .card-box:hover .card-box__icon {
+    color: #fff;
+}
+/******************* END Card Main *******************/
+
+
+
+/******************* Chart *******************/
+.graph-chart {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+    .graph-chart .chart-box {
+        position: relative;
+        background: #fff;
+        padding: 20px;
+        width: 100%;
+        -webkit-box-shadow: 4px 4px 10px -1px rgb(118 183 243);
+        -moz-box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+        box-shadow: 4px 4px 10px -1px rgb(118 183 243);
+        border-radius: 20px;
+    }
+
+/******************* END Chart *******************/
+
+
+
+/******************* Navigation *******************/
+@media screen and (max-width: 991px) {
+    .navigation {
+        left: -300px;
+    }
+
+        .navigation.active {
+            width: 300px;
+            left: 0;
+        }
+
+    .main-topbar .menu-button .menu-button__burger {
+        transform: translateX(50px);
+        background: deeppink;
+        box-shadow: 0 2px 5px rgb(255 101 47 / 20%);
+    }
+
+        .main-topbar .menu-button .menu-button__burger::before {
+            transform: translateY(10px);
+        }
+
+        .main-topbar .menu-button .menu-button__burger::after {
+            transform: translateY(-10px);
+        }
+
+    .main-topbar .menu-button.open .menu-button__burger {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+    }
+
+        .main-topbar .menu-button.open .menu-button__burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+            background: #fff;
+        }
+
+        .main-topbar .menu-button.open .menu-button__burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+            background: #fff;
+        }
+}
+
+@media screen and (max-width: 500px) {
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 10;
+    }
+
+        .navigation.active {
+            width: 100%;
+            left: 0;
+        }
+}
+/******************* END NAVIGATION *******************/
+
+
+/******************* Body Main *******************/
+@media screen and (max-width: 991px) {
+    .body-main {
+        width: 100%;
+        left: 0;
+    }
+
+        .body-main.active {
+            left: 300px;
+        }
+}
+
+@media screen and (max-width: 770px) {
+    .card-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card-main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/******************* END Body Main *******************/
+
+
+
+/******************* Top Bar *******************/
+@media screen and (max-width: 500px) {
+    .main-topbar .menu-button {
+        z-index: 11;
+    }
+
+    .body-main.active .menu-button {
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+
+    .main-topbar .menu-button .menu-button__burger {
+        transform: translateX(50px);
+        background: deeppink;
+        box-shadow: 0 2px 5px rgb(255 101 47 / 20%);
+    }
+
+        .main-topbar .menu-button .menu-button__burger::before {
+            transform: translateY(10px);
+        }
+
+        .main-topbar .menu-button .menu-button__burger::after {
+            transform: translateY(-10px);
+        }
+
+    .main-topbar .menu-button.open .menu-button__burger {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+    }
+
+        .main-topbar .menu-button.open .menu-button__burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+            background: #fff;
+        }
+
+        .main-topbar .menu-button.open .menu-button__burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+            background: #fff;
+        }
+
+    .main-topbar .menu-button.open .menu-button__burger {
+        left: 0;
+    }
+}
+
+/******************* END Top Bar *******************/
