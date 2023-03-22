@@ -1,7 +1,6 @@
 ﻿using FinvoiceWeb.Models;
 using FinvoiceWeb.Utils;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -89,12 +88,13 @@ namespace FinvoiceWeb.Controllers
                 var tokenS = jwtSecurityToken as JwtSecurityToken;
                 string roleUser = tokenS.Claims.First(claim => claim.Type == ClaimTypes.Role).Value;
 
+                var url = "https://localhost:7050/api/User/GetProfileUser?userID=" + tokenS.Claims.First(claim => claim.Type == "UserID").Value;
+                HttpClient client = new();
+                client.DefaultRequestHeaders.Authorization = new("Bearer", apiResult.Data.AccessToken);
+                string jsonString = await client.GetStringAsync(url);
+
                 if (roleUser.Equals("User"))
                 {
-                    var url = "https://localhost:7050/api/User/GetProfileUser?userID=" + tokenS.Claims.First(claim => claim.Type == "UserID").Value;
-                    HttpClient client = new();
-                    client.DefaultRequestHeaders.Authorization = new("Bearer", apiResult.Data.AccessToken);
-                    string jsonString = await client.GetStringAsync(url);
                     APIResultUserInfo apiResultProfile = JsonConvert.DeserializeObject<APIResultUserInfo>(jsonString);
 
                     SessionHelper.SetObjectAsJson(HttpContext.Session, _LOGIN_USER, apiResultProfile.Data);
@@ -102,7 +102,10 @@ namespace FinvoiceWeb.Controllers
                 }
                 else if (roleUser.Equals("Admin"))
                 {
+                    APIResultUserInfo apiResultProfile = JsonConvert.DeserializeObject<APIResultUserInfo>(jsonString);
 
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, _LOGIN_ADMIN, apiResultProfile.Data);
+                    return RedirectToAction("Dashboard", "Admin");
                 }
             }
 

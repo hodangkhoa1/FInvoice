@@ -8,6 +8,7 @@ namespace BAL.Services.Interfaces
         Task<Account> GetAccount(Account account, string action);
         Task<bool> ActionAccount(Account account, string action);
         Task<UserInfoViewModel> GetAccountTask(Account account, string action);
+        Task<List<Account>> GetAllAccount(Account account, string action);
         int Count(Account? account, string? action);
         void Save();
         void SaveAsync();

@@ -78,6 +78,9 @@ namespace DAL.Repositories.Implements
                 case "GetAllAccount":
                     result = await _dbContext.Accounts.ToListAsync();
                     break;
+                case "GetAllAccountWithRole":
+                    result = await _dbContext.Accounts.Where(a => a.UserRole == entity.UserRole).ToListAsync();
+                    break;
             }
 
             return result;

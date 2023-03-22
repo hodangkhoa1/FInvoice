@@ -1,13 +1,16 @@
-﻿@page "/dashboard"
-@model FinvoiceWeb.Areas.Admin.Pages.DashboardModel
-@{
+﻿@{
     ViewBag.Title = "Dashboard";
-    Layout = "~/Admin/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section Style
-{
-    <link rel="stylesheet" href="~/css/Admin/Dashboard.css" />
+    {
+            <link rel="stylesheet" href="~/css/Admin/Dashboard.css" />
+}
+
+@section Script
+    {
+            <script src="~/js/Admin/Dashboard.js"></script>
 }
 
 <div class="body-main">
@@ -23,7 +26,7 @@
     <div class="card-main">
         <div class="card-box">
             <div class="card-box__content flexBox">
-                <div class="content-numbers counter">1,504</div>
+                <div class="content-numbers counter">@TempData["TOTAL_USER"]</div>
                 <div class="content-name">Users</div>
             </div>
             <div class="card-box__icon">
@@ -32,7 +35,7 @@
         </div>
         <div class="card-box">
             <div class="card-box__content flexBox">
-                <div class="content-numbers counter">1,504</div>
+                <div class="content-numbers counter">@TempData["TOTAL_EXCEL_TEMPLATES"]</div>
                 <div class="content-name">Excel Templates</div>
             </div>
             <div class="card-box__icon">
@@ -41,7 +44,7 @@
         </div>
         <div class="card-box">
             <div class="card-box__content flexBox">
-                <div class="content-numbers counter">10</div>
+                <div class="content-numbers counter">@TempData["TOTAL_EXCEL_TEMPLATES"]</div>
                 <div class="content-name">Suppliers</div>
             </div>
             <div class="card-box__icon">
@@ -50,7 +53,7 @@
         </div>
         <div class="card-box">
             <div class="card-box__content flexBox">
-                <div class="content-numbers counter">500</div>
+                <div class="content-numbers counter">@TempData["TOTAL_ACCOUNTING_SOFTWARE"]</div>
                 <div class="content-name">Accounting Software</div>
             </div>
             <div class="card-box__icon">

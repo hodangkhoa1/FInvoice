@@ -2,12 +2,9 @@
 using BAL.Models;
 using BAL.Services.Interfaces;
 using BAL.Utils;
-using DAL;
 using DAL.Entities;
 using DAL.Infrastructure;
-using DAL.Repositories.Implements;
 using DAL.Repositories.Interfaces;
-using System.Data;
 
 namespace BAL.Services.Implements
 {
@@ -224,6 +221,20 @@ namespace BAL.Services.Implements
             }
 
             return userInfoViewModel;
+        }
+
+        public async Task<List<Account>> GetAllAccount(Account account, string action)
+        {
+            List<Account> result = new();
+
+            switch (action)
+            {
+                case "PagingAccount":
+                    result = await _accountRepository.GetAll(account, "GetAllAccountWithRole");
+                    break;
+            }
+
+            return result;
         }
 
         public void Save()

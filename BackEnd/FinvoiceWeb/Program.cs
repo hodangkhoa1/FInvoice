@@ -37,6 +37,14 @@ namespace FinvoiceWeb
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "Areas",
+                  pattern: "Admin/{controller}/{action=Index}/{id?}"
+                );
+            });
+
             app.Run();
         }
     }
