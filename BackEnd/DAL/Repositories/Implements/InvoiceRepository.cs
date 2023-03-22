@@ -65,6 +65,9 @@ namespace DAL.Repositories.Implements
                 case "GetAllInvoice":
                     result = await _dbContext.Invoices.ToListAsync();
                     break;
+                case "GetAllInvoiceByUserID":
+                    result = await _dbContext.Invoices.Where(i => i.IdAccount.Equals(entity.IdAccount)).ToListAsync();
+                    break;
             }
 
             return result;

@@ -21,7 +21,7 @@ namespace FinvoiceAPI.Controllers
             _invoiceFormService = invoiceFormService;
         }
 
-        #region Add XML Template
+        /*#region Add XML Template
         /// <summary>
         /// UC-43
         /// Add XML Template with role admin
@@ -108,9 +108,9 @@ namespace FinvoiceAPI.Controllers
                 ErrorMessage = errorMessage
             });
         }
-        #endregion
+        #endregion*/
 
-        #region Update XML Template
+        /*#region Update XML Template
         /// <summary>
         /// UC-41
         /// Update XML Template with role Admin
@@ -170,7 +170,7 @@ namespace FinvoiceAPI.Controllers
                     Logo = editSupplierViewModel.Logo
                 };
 
-                /*bool existingSupplier = await _supplierService.ActionSupplier(supplier, "EditSupplier");
+                *//*bool existingSupplier = await _supplierService.ActionSupplier(supplier, "EditSupplier");
 
                 if (existingSupplier == true)
                 {
@@ -182,7 +182,7 @@ namespace FinvoiceAPI.Controllers
                         Status = status,
                         ErrorMessage = errorMessage
                     });
-                }*/
+                }*//*
             }
             catch (Exception ex)
             {
@@ -195,6 +195,6 @@ namespace FinvoiceAPI.Controllers
                 ErrorMessage = errorMessage
             });
         }
-        #endregion
+        #endregion*/
     }
 }

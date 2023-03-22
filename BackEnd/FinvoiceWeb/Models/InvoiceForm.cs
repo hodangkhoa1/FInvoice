@@ -1,6 +1,6 @@
-﻿namespace BAL.Models
+﻿namespace FinvoiceWeb.Models
 {
-    public class InvoiceFormViewModel
+    public class InvoiceForm
     {
         public string IdInvoiceForm { get; set; }
         public string CodeForm { get; set; }

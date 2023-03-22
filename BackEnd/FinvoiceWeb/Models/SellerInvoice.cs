@@ -1,6 +1,6 @@
-﻿namespace BAL.Models
+﻿namespace FinvoiceWeb.Models
 {
-    public class SellerViewModel
+    public class SellerInvoice
     {
         public string IdSeller { get; set; }
         public string Name { get; set; }

@@ -1,8 +1,4 @@
-﻿.main-body {
-    padding: 95px 0;
-}
-
-.card {
+﻿.card {
     position: relative;
     display: flex;
     flex-direction: column;

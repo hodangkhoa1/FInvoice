@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="wwwroot\js\Admin\" />
+    <Folder Include="wwwroot\files\" />
   </ItemGroup>
 
   <ItemGroup>

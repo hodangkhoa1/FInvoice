@@ -1,6 +1,6 @@
-﻿namespace BAL.Models
+﻿namespace FinvoiceWeb.Models
 {
-    public class InvoiceViewModel
+    public class Invoice
     {
         public string IdInvoice { get; set; }
         public string IdAccount { get; set; }
@@ -16,9 +16,9 @@
         public DateTime ImportedDate { get; set; }
         public decimal SubTotal { get; set; }
         public byte[] Source { get; set; }
-        public InvoiceFormViewModel invoiceForm { get; set; }
-        public SellerViewModel sellerInvoice { get; set; }
-        public BuyerViewModel buyerInvoice { get; set; }
-        public List<ItemViewModel> itemInvoiceList { get; set; }
+        public InvoiceForm invoiceForm { get; set; }
+        public SellerInvoice sellerInvoice { get; set; }
+        public BuyerInvoice buyerInvoice { get; set; }
+        public List<ItemInvoice> itemInvoiceList { get; set; }
     }
 }

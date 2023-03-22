@@ -1,0 +1,274 @@
+﻿.historyInvoice {
+    margin-top: 7%;
+}
+
+.historyInvoice__table {
+    border-radius: 20px;
+    height: fit-content;
+    background-color: #fff;
+    flex-direction: column;
+    -webkit-box-shadow: 4px 4px 10px -1px #7275b9;
+    -moz-box-shadow: 4px 4px 10px -1px #7275B9;
+    box-shadow: 4px 4px 10px -1px #7275b9;
+    gap: 35px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.exportExcelList__btn {
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    align-items: center;
+}
+
+.topbar-search {
+    width: 300px;
+}
+
+    .topbar-search #searchBox {
+        border-radius: 55px;
+        padding: 0 12px;
+        height: 50px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        -webkit-box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+        -moz-box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+        box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+    }
+
+        .topbar-search #searchBox .button-search {
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0 10px 0 2px;
+        }
+
+        .topbar-search #searchBox input {
+            font-size: 20px;
+            width: 260px;
+            border: 0;
+            background: transparent;
+            outline: none;
+            color: #242993;
+        }
+
+    .topbar-search .search-place::placeholder {
+        /* chạy tốt trên Chrome, Firefox, Opera, Safari 10.1+ */
+        color: orange;
+        opacity: 1;
+        /* Firefox */
+    }
+
+    .topbar-search .search-place:-ms-input-placeholder {
+        /* chạy trên Internet Explorer 10-11 */
+        color: orange;
+    }
+
+    .topbar-search .search-place::-ms-input-placeholder {
+        /* chạy trên Microsoft Edge */
+        color: orange;
+    }
+
+    .topbar-search .button-search i {
+        color: #242993;
+        transition: all .5s;
+    }
+
+    .topbar-search .button-search:hover i {
+        color: #BF7926;
+    }
+
+.historyInvoice label {
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+.historyInvoice .select {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+}
+
+.historyInvoice .resultExcelsInHistory {
+    justify-content: end;
+    gap: 15px;
+}
+
+.historyInvoice .resultExcels_button {
+    color: #fff;
+    height: 50px;
+    width: 120px;
+    border-radius: 30px;
+    -webkit-box-shadow: 4px 4px 10px -1px rgb(118 183 243);
+    -moz-box-shadow: 4px 4px 10px -1px rgba(118, 183, 243, 1);
+    box-shadow: 4px 4px 10px -1px rgb(118 183 243);
+}
+
+.historyInvoice .export__btn {
+    background: #3B8F39;
+}
+
+.historyInvoice .delete__btn {
+    background: red;
+}
+
+.historyInvoice .resultExcels_button button {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+
+/* popup import file */
+.modal {
+    display: none;
+    position: fixed;
+    /* z-index: 1; */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 5px 20px 10px 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.modal__title {
+    color: #BF7926;
+}
+
+.model-rectangle {
+    height: 250px;
+    border-radius: 10px;
+    border: 2px dashed #242993;
+    flex-direction: column;
+    gap: 20px;
+}
+
+    .model-rectangle .model__icon i {
+        font-size: 60px;
+        color: #242993;
+    }
+
+.model__note p {
+    color: #242993;
+    font-weight: 400;
+}
+
+.model__btn {
+    gap: 15px;
+}
+
+.btn__import button {
+    width: 8rem;
+}
+
+/* end popup import file */
+
+.historyInvoice__table--header {
+    background-color: #FF9966;
+    transition: 0.5s;
+}
+
+/* checkbox */
+.form-check, .file__xml {
+    gap: 20px;
+    justify-content: start;
+}
+
+    .form-check input {
+        border: 3px solid #000;
+        width: 35px;
+        height: 35px;
+    }
+
+.form-check-input {
+    margin-top: unset;
+}
+
+.form-check label, .file__name {
+    font-size: 20px;
+}
+
+.form-check-input:checked {
+    background-color: #3B8F39;
+    border: 3px solid #3B8F39 !important;
+}
+
+.form-check-input:focus {
+    border-color: #7275b9;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.table__allCheck {
+    justify-content: space-between;
+}
+
+    .table__allCheck .form-check label, .Excel__title p {
+        color: #fff;
+    }
+
+.row__check {
+    justify-content: space-between;
+}
+
+    .row__check .form-check label {
+        color: #000;
+    }
+
+.historyInvoice__table--right {
+    gap: 20px;
+}
+
+    .historyInvoice__table--right i {
+        font-size: 25px;
+    }
+
+    .historyInvoice__table--right i {
+        font-size: 30px;
+        transition: ease-in-out .5s;
+    }
+
+.historyInvoice__table--body li:hover .row__check {
+    background-color: #FFF5EA;
+}
+
+.historyInvoice__table--body li .row__check {
+    transition: ease-in-out .5s;
+}
+
+.historyInvoice__table--body li .table__delete__btn:hover i,
+.historyInvoice__table--body li:hover .table__delete__btn i {
+    color: red;
+}
+
+.file__img {
+    width: 60px;
+}
+
+.Excel__title p {
+    font-size: 30px;
+}
+
+.historyInvoice__table__contain {
+    border-bottom: 1px solid black;
+    padding-bottom: 3rem;
+}
+
+    .historyInvoice__table__contain:last-child {
+        border-bottom: unset;
+    }
+
+/* end checkbox */

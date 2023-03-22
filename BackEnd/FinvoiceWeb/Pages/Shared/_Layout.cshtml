@@ -38,22 +38,19 @@
 
     <div id="error-box"></div>
 
-    <!------------- HOME PAGE ------------------->
-    <section class="home__header__page" style="background-image: url('../images/HinhLuon.png'); background-repeat: no-repeat; background-position: center; background-size: cover; height: 150vh;">
-        <!-- NAVBAR ------>
-        @{
-            Html.RenderPartial("_NavBar.cshtml");
-        }
-        <!-- END NAVBAR -->
-        @RenderBody()
+    <!-- NAVBAR ------>
+    @{
+        Html.RenderPartial("_NavBar.cshtml");
+    }
+    <!-- END NAVBAR -->
 
-        <!-- FOOTER ------>
-        @{
-            Html.RenderPartial("_FooterBar.cshtml");
-        }
-        <!-- END FOOTER -->
-    </section>
-    <!------------- END HOME PAGE --------------->
+    @RenderBody()
+
+    <!-- FOOTER ------>
+    @{
+        Html.RenderPartial("_FooterBar.cshtml");
+    }
+    <!-- END FOOTER -->
 
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

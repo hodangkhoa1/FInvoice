@@ -36,9 +36,10 @@
                 <p>Maximum upload file size is 8 MB.</p>
             </div>
 
-            <div class="exportExcel__btnImport flexBox">
-                <button onclick="location.href = '';">Import file</button>
-            </div>
+            <form method="post" class="exportExcel__btnImport flexBox" enctype="multipart/form-data">
+                <input asp-for="UploadFile.File" class="file-input" type="file" hidden />
+                <p>Import file</p>
+            </form>
 
             <div class="exportExcel__note flexBox">
                 <p>Dowload sample template for Import.</p>

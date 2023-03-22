@@ -1,0 +1,388 @@
+﻿@page
+@model FinvoiceWeb.Pages.HistoryInvoiceModel
+@{
+}
+
+@section Style
+{
+    <link rel="stylesheet" href="~/css/User/HistoryInvoice.css" />
+}
+
+<section class="historyInvoice">
+    <div class="container">
+        <div class="my-3">
+            <div class="row">
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <h2 class="modal__title text-center">File Upload</h2>
+
+                        <div class="model-rectangle mb-3 flexBox">
+                            <div class="model__icon">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+
+                            <div class="model__note">
+                                <p>Browse XML File to Upload</p>
+                            </div>
+                        </div>
+
+                        <div class="model__btn mt-3 flexBox">
+                            <div class="btn__import btn-next">
+                                <button type="button" class="btn btn-primary btn-lg">Next</button>
+                            </div>
+
+                            <div class="btn__import btn-cancel">
+                                <button type="button" class="cancel btn btn-danger btn-lg">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Box -->
+                <div class="col-4">
+                    <div class="exportList__btn">
+                        <div class="topbar-search">
+                            <div id="searchBox">
+                                <input class="search-place" type="text" placeholder="Search service">
+                                <button class="button-search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <div class="resultExcelsInHistory flexBox">
+                        <div class="resultExcels_button export__btn flexBox">
+                            <button type="button">Export</button>
+                        </div>
+
+                        <div class="resultExcels_button delete__btn flexBox" onclick="ConfirmDeleted()">
+                            <button type="button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="historyInvoice__cover">
+
+            <div class="historyInvoice__table__contain mb-3">
+                <div class="historyInvoice__table--date p-3">
+                    <p class="historyInvoice_date">Today - Thursday, January 19, 2023</p>
+                </div>
+                <div class="historyInvoice__table">
+                    <div class="historyInvoice__table--header p-3">
+                        <div class="row">
+                            <div class="col-4 flexBox" style="justify-content: start;">
+                                <div class="table__allCheck flexBox">
+                                    <div class="form-check flexBox">
+                                        <input type="checkbox" class="form-check-input" id="allCheck" />
+                                        <label class="form-check-label" for="allCheck">
+                                            12:54 AM
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4 flexBox">
+                                <div class="Excel__title">
+                                    <p>ExcelData.xlcx</p>
+                                </div>
+                            </div>
+
+                            <div class="col-4 flexBox">
+                                <div class="empty">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="historyInvoice__table--body" id="historyInvoice__table--body1">
+                        <ul>
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <!-- <input type="checkbox" class="form-check-input" id="checkRow" />
+                                            <label class="form-check-label" for="checkRow">
+                                                Data Export.xml
+                                            </label> -->
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <!-- <input type="checkbox" class="form-check-input" id="checkRow" />
+                                            <label class="form-check-label" for="checkRow">
+                                                Data Export.xml
+                                            </label> -->
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <!-- <input type="checkbox" class="form-check-input" id="checkRow" />
+                                            <label class="form-check-label" for="checkRow">
+                                                Data Export.xml
+                                            </label> -->
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="historyInvoice__table__contain mb-3">
+                <div class="historyInvoice__table--date p-3">
+                    <p class="historyInvoice_date">Yesterday - Wednesday, January 18, 2023</p>
+                </div>
+                <div class="historyInvoice__table">
+                    <div class="historyInvoice__table--header p-3">
+                        <div class="row">
+                            <div class="col-4 flexBox" style="justify-content: start;">
+                                <div class="table__allCheck flexBox">
+                                    <div class="form-check flexBox">
+                                        <input type="checkbox" class="form-check-input" id="allCheck" />
+                                        <label class="form-check-label" for="allCheck">
+                                            12:54 AM
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4 flexBox">
+                                <div class="Excel__title">
+                                    <p>ExcelData.xlcx</p>
+                                </div>
+                            </div>
+
+                            <div class="col-4 flexBox">
+                                <div class="empty">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="historyInvoice__table--body" id="historyInvoice__table--body1">
+                        <ul>
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <!-- <input type="checkbox" class="form-check-input" id="checkRow" />
+                                            <label class="form-check-label" for="checkRow">
+                                                Data Export.xml
+                                            </label> -->
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <!-- <input type="checkbox" class="form-check-input" id="checkRow" />
+                                            <label class="form-check-label" for="checkRow">
+                                                Data Export.xml
+                                            </label> -->
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <!-- <input type="checkbox" class="form-check-input" id="checkRow" />
+                                            <label class="form-check-label" for="checkRow">
+                                                Data Export.xml
+                                            </label> -->
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="historyInvoice__table__contain mb-3">
+                <div class="historyInvoice__table--date p-3">
+                    <p class="historyInvoice_date">Tusday, January 17, 2023</p>
+                </div>
+                <div class="historyInvoice__table">
+                    <div class="historyInvoice__table--header p-3">
+                        <div class="row">
+                            <div class="col-4 flexBox" style="justify-content: start;">
+                                <div class="table__allCheck flexBox">
+                                    <div class="form-check flexBox">
+                                        <input type="checkbox" class="form-check-input" id="allCheck" />
+                                        <label class="form-check-label" for="allCheck">
+                                            12:54 AM
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4 flexBox">
+                                <div class="Excel__title">
+                                    <p>ExcelData.xlcx</p>
+                                </div>
+                            </div>
+
+                            <div class="col-4 flexBox">
+                                <div class="empty">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="historyInvoice__table--body" id="historyInvoice__table--body1">
+                        <ul>
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="row__check flexBox ps-2 pe-3 py-3">
+
+                                    <div class="historyInvoice__table--left">
+                                        <div class="file__xml flexBox">
+                                            <div class="file__img">
+                                                <img src="../img/xmlpngwing.com.png" alt="">
+                                            </div>
+                                            <p class="file__name">Data Export(01/18/2023).xml</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="historyInvoice__table--right flexBox">
+                                        <button class="table__delete__btn" onclick="ConfirmDeleted()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

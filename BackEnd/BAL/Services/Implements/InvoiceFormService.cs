@@ -2,7 +2,6 @@
 using BAL.Services.Interfaces;
 using DAL.Entities;
 using DAL.Infrastructure;
-using DAL.Repositories.Implements;
 using DAL.Repositories.Interfaces;
 
 namespace BAL.Services.Implements
@@ -34,10 +33,6 @@ namespace BAL.Services.Implements
                     {
                         check = await _invoiceFormRepository.ActionEdit(invoiceForm, "AddInvoiceForm");
                     }
-                    else
-                    {
-                        throw new Exception("Invoice Form already exists!");
-                    }
 
                     break;
                 case "EditInvoiceForm":
@@ -59,10 +54,6 @@ namespace BAL.Services.Implements
                             throw new Exception("Invoice Form already exist in the system!");
                         }
                     }
-                    else
-                    {
-                        throw new Exception("Invoice Form does not exist in the system!");
-                    }
                     break;
                 case "EditStatus":
                     getInvoiceForm = await _invoiceFormRepository.Get(invoiceForm, "GetByID");
@@ -71,10 +62,6 @@ namespace BAL.Services.Implements
                     {
                         getInvoiceForm.Status = invoiceForm.Status;
                         check = await _invoiceFormRepository.ActionEdit(getInvoiceForm, "EditInvoiceForm");
-                    }
-                    else
-                    {
-                        throw new Exception("Invoice Form does not exist in the system!");
                     }
                     break;
             }
