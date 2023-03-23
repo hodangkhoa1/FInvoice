@@ -450,7 +450,7 @@ namespace FinvoiceAPI.Controllers
                 {
                     EndPage = endPage,
                     CurrentPage = index,
-                    Success = true,
+                    Status = true,
                     Data = result
                 });
             }
