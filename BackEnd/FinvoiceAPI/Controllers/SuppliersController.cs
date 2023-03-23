@@ -392,5 +392,62 @@ namespace FinvoiceAPI.Controllers
             });
         }
         #endregion
+
+        #region Get all list
+        /// <summary>
+        /// UC-26
+        /// Get all list Supplier
+        /// </summary>
+        /// <returns>Specific HTTP Status code</returns>
+        /// <response code="200">Return list screen if the access is successful</response>
+        /// <response code="404">If the list is not found</response>
+        [HttpGet]
+        [ProducesResponseType(typeof(List<AccountingSoftware>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllListAccountingSoftware(int page)
+        {
+            string errorMessage = "";
+            bool status = false;
+
+            try
+            {
+                int index = page;
+
+                List<Supplier> result = await _supplierService.GetAllSupplier(new Supplier(), "PagingAccount");
+                int getTotal = result.Count;
+
+                if (result.Count != 0)
+                {
+                    result = result.Skip((index - 1) * 5).Take(5).ToList();
+                }
+
+                int endPage = getTotal / 5;
+
+                if (getTotal % 5 != 0)
+                {
+                    endPage++;
+                }
+
+                return Ok(new
+                {
+                    EndPage = endPage,
+                    CurrentPage = index,
+                    Success = true,
+                    Data = result
+                });
+            }
+            catch (Exception)
+            {
+                errorMessage = "Something went wrong!";
+            }
+
+            return BadRequest(new
+            {
+                Status = status,
+                ErrorMessage = errorMessage
+            });
+        }
+        #endregion
     }
 }

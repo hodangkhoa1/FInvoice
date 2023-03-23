@@ -8,6 +8,7 @@ namespace BAL.Services.Interfaces
         Task<AccountingSoftware> GetAccountingSoftware(AccountingSoftware accountingSoftware, string action);
         Task<bool> ActionAccountingSoftware(AccountingSoftware accountingSoftware, string action);
         Task<AccountingSoftwareInfoViewModel> GetAccountingSoftwareTask(AccountingSoftware accountingSoftware, string action);
+        Task<List<AccountingSoftware>> GetAllAccountingSoftware(AccountingSoftware accountingSoftware, string action);
         int Count(AccountingSoftware? accountingSoftware, string? action);
         void Save();
         void SaveAsync();

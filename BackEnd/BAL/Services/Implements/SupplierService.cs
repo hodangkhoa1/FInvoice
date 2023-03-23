@@ -90,6 +90,20 @@ namespace BAL.Services.Implements
             return _supplierRepository.Count(supplier, action);
         }
 
+        public async Task<List<Supplier>> GetAllSupplier(Supplier supplier, string action)
+        {
+            List<Supplier> result = new();
+
+            switch (action)
+            {
+                case "PagingAccount":
+                    result = await _supplierRepository.GetAll(supplier, "GetAllSupplierWithRole");
+                    break;
+            }
+
+            return result;
+        }
+
         public async Task<Supplier> GetSupplier(Supplier supplier, string action)
         {
             Supplier result = new();

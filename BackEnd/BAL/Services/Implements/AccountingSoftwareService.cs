@@ -119,6 +119,20 @@ namespace BAL.Services.Implements
             return accountingSoftwareInfoViewModel;
         }
 
+        public async Task<List<AccountingSoftware>> GetAllAccountingSoftware(AccountingSoftware accountingSoftware, string action)
+        {
+            List<AccountingSoftware> result = new();
+
+            switch (action)
+            {
+                case "PagingAccount":
+                    result = await _accountingSoftwareRepository.GetAll(accountingSoftware, "GetAllAccountingSoftwareWithRole");
+                    break;
+            }
+
+            return result;
+        }
+
         public void Save()
         {
             _unitOfWork.Commit();
